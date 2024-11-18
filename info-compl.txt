@@ -1,0 +1,3 @@
+Doc du hashage mdp : https://www.npmjs.com/package/bcrypt
+
+JWT : Standard (RFC75) jot -> https://www.npmjs.com/package/jsonwebtoken

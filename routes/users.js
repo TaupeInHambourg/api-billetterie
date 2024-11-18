@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../database')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+/* GET users page. */
+router.get('/users', function(req, res, next) {
+  res.status(200).json(db.users);
 });
 
 module.exports = router;
