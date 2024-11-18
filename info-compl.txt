@@ -1,3 +1,27 @@
-Doc du hashage mdp : https://www.npmjs.com/package/bcrypt
+*** HASH mdp : https://www.npmjs.com/package/bcrypt
 
-JWT : Standard (RFC75) jot -> https://www.npmjs.com/package/jsonwebtoken
+
+
+
+
+*** JWT : Standard (RFC75) jot -> https://www.npmjs.com/package/jsonwebtoken
+
+
+
+
+
+***  CURL :
+
+
+
+** Identification
+
+$ curl -X POST localhost:3000/login -d "pseudo=FoxPawsOwO&password=a"
+
+{"_links":[{"self":{"href":"/login","templated":false},"book":{"href":"concerts/{id}/reservations","templated":true,"type":"string"}}],"jwt":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6IkZveFBhd3NPd08iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzE5MzcyNzAsImV4cCI6MTczMjAyMzY3MH0.zA6JAOA0oKF-mh4suZqesjtKMKh1cTgj3O_PHwfrlQI","message":"Bienvenue FoxPawsOwO !"}
+
+
+
+** Accès à une ressource protégée -> récupérer le token généré avec l'identification pour le passer dans le header authorization
+
+curl -X GET localhost:3000/concerts/1/reservation -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6IkZveFBhd3NPd08iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzE5MzcyNzAsImV4cCI6MTczMjAyMzY3MH0.zA6JAOA0oKF-mh4suZqesjtKMKh1cTgj3O_PHwfrlQI"
